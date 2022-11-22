@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sudoku</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--Top-nav-->
+    <nav>
+        <div class="nav_container">
+            <a href="#" class="nav_logo">Sudoku</a>
+        </div>
+    </nav>
+    <!--Main-->
+    <div class="main">
+        <div class="screen">
+            <!--Start-Screen-->
+            <div class="start_screen active" id="start_screen">
+                <input type="text" placeholder="Write name" maxlength="11" class="input_name" id="input_name">
+                <div class="btn" id="btn_level">
+                    Easy
+                </div>
+                <div class="btn" id="btn_continue">Continue</div>
+                <div class="btn btn_blue" id="btn_play">New Game</div>
+            </div>
+            <!--Game-Screen-->
+            <div class="main_game" id="game_screen">
+                <!--81-cells-->
+                <div class="main_sudoku_grid">
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                    <div class="main_grid_cell"></div>
+                </div>
+                <!--Info-->
+                <div class="main_game_info">
+                    <div class="main_game_info_box main_game_info_name">
+                        <span id="player_name">Miksam</span>
+                    </div>
+                    <div class="main_game_info_box main_game_info_level">
+                        <span id="game_level">Easy</span>
+                    </div>
+                </div>
+                <!--Time-->
+                <div class="main_game_info_box main_game_info_time">
+                    <span id="game_time">00:00:00</span>
+                    <div class="pause_btn" id="btn_pause">
+                        <i class="bx bx-pause"></i>
+                    </div>
+                </div>
+                <!--Buttons-Numbers-->
+                <div class="numbers">
+                    <div class="number">1</div>
+                    <div class="number">2</div>
+                    <div class="number">3</div>
+                    <div class="number">4</div>
+                    <div class="number">5</div>
+                    <div class="number">6</div>
+                    <div class="number">7</div>
+                    <div class="number">8</div>
+                    <div class="number">9</div>
+                    <div class="delete" id="btn_delete">X</div>
+                </div>
+            </div>
+            <!--Pause-Screen-->
+            <div class="pause_screen" id="pause_screen">
+                <div class="btn btn_blue" id="btn_resume">Resume</div>
+                <div class="btn" id="btn_new_game">New Game</div>
+            </div>
+            <!--Result-Screen-->
+            <div class="result_screen" id="result_screen">
+                <div class="congrate">Completed</div>
+                <div class="info">Time</div>
+                <div id="result_time"></div>
+                <div class="btn" id="btn_new_game_2">New Game</div>
+            </div>
+        </div>
+    </div>
+    <script src="./src/constants.js"></script>
+    <script src="./src/sudoku.js"></script>
+    <script src="./src/script.js"></script>
+</body>
+</html>
